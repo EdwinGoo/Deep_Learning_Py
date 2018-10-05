@@ -5,10 +5,13 @@ import numpy as np
 def multiple_regression_tree_placeholder() :
     # girth, height, volume = np.loadtxt('./data/trees.csv', delimiter=',', unpack=True, dtype=np.float32)
     # girth, height, volume = np.loadtxt('./data/trees.csv', delimiter=',', dtype=np.float32).T
+    
+    ########################## 전처리 과정에서 Transpose는 성능상 문제가 되지 않음, 다만 반복문에서 사용할 경우 주의 ######################################
     trees = np.loadtxt('./data/trees.csv', delimiter=',', dtype=np.float32)
 
     xx = np.float32([trees[:,0],trees[:,1]])
     y = trees[:,2]
+    ########################## 전처리 과정에서 Transpose는 성능상 문제가 되지 않음, 다만 반복문에서 사용할 경우 주의 ######################################
 
     x = tf.placeholder(tf.float32)
     w = tf.Variable(tf.random_uniform([1, 2]))
