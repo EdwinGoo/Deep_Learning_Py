@@ -47,5 +47,4 @@ def show_gradient() :
     print(w*5)
     print(w*7)
 
-
 show_gradient()

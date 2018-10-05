@@ -1,5 +1,3 @@
-print(2)
-
 word = "python"
 print(word[:3])
 
