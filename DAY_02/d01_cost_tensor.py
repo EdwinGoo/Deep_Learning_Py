@@ -76,21 +76,13 @@ def showtensorflowcost3() :
     y = [1,2,3]
     
     # 가변값을 placeholder 잡아라 
-    w = tf.placeholder(tf.float32)
-
-    hx = w * x
-    costEQloss = tf.reduce_mean((hx - y)**2)
-
+    # costEQloss = tf.reduce_mean((w * x - y)**2)
     ww = np.arange(-3, 5, 0.1)
-    cc = []
+    print(ww)
+    cc = np.multiply(ww,x)
+    # cc = np.mean((ww * x - y)**2)
 
-    sess = tf.Session()
-
-    for i in ww:
-        c = sess.run(costEQloss, {w:i})
-        cc.append(c)
-
-    plt.plot(ww,cc,"ro")
-    plt.show()
+    # plt.plot(ww,cc,"ro")
+    # plt.show()
 
 showtensorflowcost3() 
