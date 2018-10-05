@@ -70,7 +70,6 @@ def showtensorflowcost2() :
 
 # showtensorflowcost2() 
 
-
 def showtensorflowcost3() :
     x = [1,2,3]
     y = [1,2,3]
@@ -81,7 +80,6 @@ def showtensorflowcost3() :
     print(ww)
     cc = np.multiply(ww,x)
     # cc = np.mean((ww * x - y)**2)
-
     # plt.plot(ww,cc,"ro")
     # plt.show()
 

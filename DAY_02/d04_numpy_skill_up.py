@@ -34,7 +34,6 @@ a = np.random.randint(0,100,12).reshape(3,4)
 # [[75 27  6  2]
 #  [ 3 67 76 48]
 #  [22 49 52  5]]
-
 print(a)
 
 print(np.sum(a))
@@ -48,4 +47,3 @@ print(np.max(a,axis=1))
 print(np.argmax(a))
 print(np.argmax(a,axis=0)) # [0,1,1,1] 75가 크다 0번째 67이 크다 1번째 76이 크다 1번째 48이 크다 1번째
 print(np.argmax(a,axis=1))
-
