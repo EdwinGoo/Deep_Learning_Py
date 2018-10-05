@@ -73,14 +73,10 @@ def showtensorflowcost2() :
 def showtensorflowcost3() :
     x = [1,2,3]
     y = [1,2,3]
-    
-    # 가변값을 placeholder 잡아라 
-    # costEQloss = tf.reduce_mean((w * x - y)**2)
-    ww = np.arange(-3, 5, 0.1)
-    print(ww)
-    cc = np.multiply(ww,x)
-    # cc = np.mean((ww * x - y)**2)
-    # plt.plot(ww,cc,"ro")
-    # plt.show()
+
+    ww = np.arange(-3, 5, 0.1).reshape(-1,1)
+    cc = np.mean((ww * x - y)**2, axis=1)
+    plt.plot(ww,cc,"ro")
+    plt.show()
 
 showtensorflowcost3() 
