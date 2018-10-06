@@ -1,3 +1,6 @@
+
+#0. 김성훈 교수 모두의 딥러닝 // 파이쿵 applekoong 김정훈
+
 #1. 
 InvalidArgumentError (see above for traceback): You must feed a value for placeholder tensor 'Placeholder' with dtype float
 [[{{node Placeholder}} = Placeholder[dtype=DT_FLOAT, shape=<unknown>, _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
