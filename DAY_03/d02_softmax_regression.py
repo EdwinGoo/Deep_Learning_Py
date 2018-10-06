@@ -6,5 +6,7 @@ def softmax_my(array) :
     v = np.exp(array)
     print(v)
     print(v/np.sum(v))
-    
+
 softmax_my([2.0,1.0,0.1])
+
+##
