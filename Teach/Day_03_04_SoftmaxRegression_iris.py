@@ -32,6 +32,23 @@ def get_iris():
     return xx, yy
 
 
+def get_iris_sparse():
+    df = pd.read_csv('Data/iris.csv')
+
+    xx = np.float32(df.values[:, :-1])
+    xx = preprocessing.add_dummy_feature(xx)
+    xx = np.float32(xx)
+
+    yy = df.variety.values
+
+    yy = preprocessing.LabelEncoder().fit_transform(yy)
+    print(yy[:3])
+    print('-' * 50)
+
+    print(xx.shape, yy.shape)
+    return xx, yy
+
+
 # 문제
 # iris 데이터셋에 대해서
 # train_set 70%로 학습하고 test_set 30%에 대해 정확도를 알려주세요.
@@ -141,8 +158,52 @@ def softmax_regression_iris_2():
     sess.close()
 
 
+def softmax_regression_iris_3():
+    xx, y = get_iris_sparse()
+
+    # 75:25
+    data = model_selection.train_test_split(xx, y)
+    x_train, x_test, y_train, y_test = data
+
+    x = tf.placeholder(tf.float32)
+    w = tf.Variable(tf.random_uniform([5, 3]))
+
+    # (105,) = (105, 5) @ (5, 3)
+    z = tf.matmul(x, w)
+    hx = tf.nn.softmax(z)
+    loss_i = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y_train, logits=z)
+    loss = tf.reduce_mean(loss_i)
+
+    optimizer = tf.train.GradientDescentOptimizer(0.1)
+    train = optimizer.minimize(loss)
+
+    sess = tf.Session()
+    sess.run(tf.global_variables_initializer())
+
+    for i in range(100):
+        sess.run(train, {x: x_train})
+        print(i, sess.run(loss, {x: x_train}))
+    print('-' * 50)
+
+    pred = sess.run(hx, {x: x_test})
+    print(pred.shape, y_test.shape)
+
+    print(pred[:3])
+    print(y_test[:3])
+    print('-' * 50)
+
+    pred_arg = np.argmax(pred, axis=1)
+
+    print(pred_arg[:10])
+    print('-' * 50)
+
+    equals = (pred_arg == y_test)
+    print(equals[:10])
+    print('acc :', np.mean(equals))
+
+    sess.close()
+
+
 # softmax_regression_iris_1()
-softmax_regression_iris_2()
-
-
-print('\n\n\n\n\n\n\n')
+# softmax_regression_iris_2()
+softmax_regression_iris_3()
