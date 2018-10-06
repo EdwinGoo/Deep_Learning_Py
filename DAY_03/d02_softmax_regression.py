@@ -9,4 +9,4 @@ def softmax_my(array) :
 
 softmax_my([2.0,1.0,0.1])
 
-##
+#
