@@ -1,5 +1,6 @@
+tip.1 그래프 https://www.desmos.com/calculator
 
-#0. 김성훈 교수 모두의 딥러닝 // 파이쿵 applekoong 김정훈
+tip.2 김성훈 교수 모두의 딥러닝 // 파이쿵 applekoong 김정훈
 
 #1. 
 InvalidArgumentError (see above for traceback): You must feed a value for placeholder tensor 'Placeholder' with dtype float
@@ -15,3 +16,10 @@ TypeError: Input 'y' of 'Mul' Op has type int32 that does not match type float32
 #3. 
 ValueError: logits and labels must have the same shape ((1, ?) vs (6,))
 배열의 차원 문제, 예를 들면 [1,2,3,4] 와 [[1,2,3,4]] 는 다르다. 
+
+#4. softmax를 하다보면 데이터의 행렬 바뀜에 따라 loss(error) 값의 출력이 데이터의 갯수보다 작게 나올 수 있다.
+1 . 행열을 바꾸던지
+2.softmax_cross_entropy_with_logits_v2의 dim(axis) 옵션과 softmax의 axis를 설정할 것
+
+
+check.1 one hot labels
