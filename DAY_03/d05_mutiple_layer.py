@@ -91,3 +91,4 @@ def show_model(model) :
     
 # show_model(mnist_softmax)
 show_model(mnist_multi_layers)
+##
