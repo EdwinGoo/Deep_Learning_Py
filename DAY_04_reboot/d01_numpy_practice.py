@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np  
 
 # normal double
 normdata = list(range(10))
@@ -12,3 +12,5 @@ npdata = [[0,1],[1,0]]
 arraydata = np.array(npdata)
 print(arraydata)
 print(arraydata*2)
+
+#t
