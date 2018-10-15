@@ -1,0 +1,4 @@
+# tip01 
+anaconda 설치 후 vscode 연결 시 파이썬 설치하지 말고 anaconda의 path를 잡아야한다.
+1. anaconda 숨겨진 위치 파이썬 path01 
+2. Scripts 폴더의 pip 사용을 위한 path02
