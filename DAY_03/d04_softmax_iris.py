@@ -20,7 +20,7 @@ def get_iris():
 def get_iris_sparse():
     df = pd.read_csv("./DATA/iris.csv")
     xx = np.float32(preprocessing.add_dummy_feature(df.values[:, :-1]))
-    yy =df.variety
+    yy =df.variety # variety는 헤더의 지시자
     yy = preprocessing.LabelEncoder().fit_transform(yy)
     
     # labelEncoder
