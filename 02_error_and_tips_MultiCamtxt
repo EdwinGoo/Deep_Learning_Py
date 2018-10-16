@@ -3,3 +3,5 @@ anaconda 설치 후 vscode 연결 시 파이썬 설치하지 말고 anaconda의 
 1. anaconda 숨겨진 위치 파이썬 path01 
 2. Scripts 폴더의 pip 사용을 위한 path02
 3. 굳이 위 방법 말고 vscode 왼쪽 구석에 환경에 맞게 파이썬 설정가능함;;; 몰랐으
+
+http://norman3.github.io/prml/docs/chapter02/0
