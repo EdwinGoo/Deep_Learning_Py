@@ -13,3 +13,11 @@ https://tykimos.github.io/2017/01/27/MLP_Layer_Talk/
 
 
 logit sigmoid inverse function
+
+활성화 함수의 요건
+1) 비선형함수
+2) 미분가능
+
+http://nittaku.tistory.com/267
+
+https://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html
