@@ -15,8 +15,11 @@ Y_test = pd.get_dummies(y_test.flatten()).values
 mozzi = imread('data/mozzi.jpg')
 plt.show()
 
-kernel = np.array([-1, 1])
-kernel = np.expand_dims(np.expand_dims(kernel,-1),0)
+
+# 커널 필터 만들기 아래 주석 두 줄이 코드 한 줄과 같은 의미
+# kernel = np.array([-1], [1])
+# kernel = np.expand_dims(np.expand_dims(kernel,-1),0)
+kernel = np.array([[[-1], [1]]])
 
 edges = correlate(mozzi, kernel, mode='same')
 print(edges[:,:,0])
